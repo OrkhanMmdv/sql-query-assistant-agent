@@ -8,7 +8,6 @@ def main():
     agent = SQLQueryAssistantAgent()
 
     print("SQL Query Assistant Agent")
-    print("Example: Show all students with grade higher than 8")
     print("Type 'exit' to stop.")
 
     while True:

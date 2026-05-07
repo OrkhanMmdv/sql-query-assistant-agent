@@ -9,6 +9,7 @@ def create_connection():
 
 
 def setup_database():
+
     connection = create_connection()
     cursor = connection.cursor()
 
