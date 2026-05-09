@@ -1,4 +1,5 @@
 def validate_user_input(user_input):
+
     if user_input is None:
         return False
 
