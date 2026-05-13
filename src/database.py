@@ -26,7 +26,7 @@ def setup_database():
     cursor.execute("DELETE FROM students")
 
     students = [
-        ("Orkhan", 20, 8.7, "Riga"),
+        ("Orkhan", 20, 9.7, "Riga"),
         ("Kamal", 21, 9.2, "Riga"),
         ("Ali", 18, 7.5, "Baku"),
         ("Leyla", 22, 9.5, "Baku"),
