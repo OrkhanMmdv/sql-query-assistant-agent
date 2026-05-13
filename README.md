@@ -48,12 +48,15 @@ sql-query-assistant-agent/
 ├── tests/
 │   └── test_tools.py
 │
+├── docs/
+│   ├── step1.md
+│   ├── step2.md
+│   └── step3.md
+│
 ├── requirements.txt
 ├── README.md
-├── description.md
-├── step2.md
-├── step3.md
-└── .env.example
+├── .env
+└── .gitignore
 ```
 
 ---
