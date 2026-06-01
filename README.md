@@ -51,7 +51,8 @@ sql-query-assistant-agent/
 ├── docs/
 │   ├── step1.md
 │   ├── step2.md
-│   └── step3.md
+│   ├── step3.md
+│   └── final.md
 │
 ├── requirements.txt
 ├── README.md
@@ -86,7 +87,7 @@ If the AI service fails or quota is exceeded, the system automatically switches 
 Clone repository:
 
 ```bash
-git clone YOUR_REPOSITORY_LINK
+git clone https://github.com/OrkhanMmdv/sql-query-assistant-agent.git
 cd sql-query-assistant-agent
 ```
 
@@ -107,6 +108,9 @@ GEMINI_API_KEY=your_api_key_here
 ```
 
 The `.env` file should not be uploaded to GitHub.
+
+The API key is optional. Without it, the program runs using the built-in
+rule-based fallback generator instead of Gemini AI.
 
 ---
 
@@ -170,6 +174,25 @@ The project includes:
 * AI fallback testing
 
 ---
+
+
+# Data Conversion
+
+[#data-conversion](#data-conversion)
+
+Data changes form as it moves between components:
+
+- User text is converted into a SQL string by the AI or fallback generator.
+- The AI response is cleaned of Markdown code fences to produce plain SQL.
+- The SQLite database returns rows as a list of tuples.
+- The result formatter converts those tuples into readable labelled lines.
+
+Correctness is preserved by validating the input before generation and
+validating the SQL before execution, and by using a fixed, known table schema
+so the formatting step always reads columns in the same order.
+
+---
+
 
 # Deployment Strategy
 

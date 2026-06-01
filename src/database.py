@@ -5,6 +5,10 @@ DB_PATH = Path(__file__).resolve().parent.parent / "database" / "students.db"
 
 
 def create_connection():
+    # Ensure the database directory exists. The .db file itself is excluded
+    # from Git (see .gitignore), so on a fresh clone this folder may not be
+    # present yet. Creating it here lets the program run without manual setup.
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     return sqlite3.connect(DB_PATH)
 
 
